@@ -10,10 +10,11 @@ import {
 } from "@chakra-ui/react";
 
 import lockedImage from "@assets/locked.png";
+import { forwardRef } from "react";
 
-export default function CallToActionWithIllustration() {
+const Hero = forwardRef((props, ref)=> {
   return (
-    <Container maxW={"5xl"}>
+    <Container maxW={"5xl"} ref = {ref}>
       <Stack
         textAlign={"center"}
         align={"center"}
@@ -72,3 +73,6 @@ export default function CallToActionWithIllustration() {
     </Container>
   );
 }
+)
+Hero.displayName="Hero";
+export default Hero;
